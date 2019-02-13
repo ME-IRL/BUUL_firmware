@@ -16,39 +16,5 @@ static inline void setup(){
 
 int main(){
 	setup();
-	
-	//int up = 0;
-	int count = 0;
-	while(1){
-//		if(up == 2){ // DOWN
-//			PWM -= 0x1;
-//			if(PWM == 0)
-//				up = 0;
-//		}else if(up){ // UP
-//			PWM += 0x1;
-//			if(PWM == PWM_TOP)
-//				up = 0;
-//		}
-//	}
-
-		if(up == 1){
-			if(count++ % 512){
-				PWM += 0x01;
-			}
-			if(PWM == PWM_TOP){
-				up = 0;
-				count = 0;
-			}
-		}else if(up == 2){
-			if(count++ % 64){
-				PWM -= 0x02;
-				if(PWM % 2)
-					PWM -= 0x01;
-			}
-			if(PWM == 0){
-				up = 0;
-				count = 0;
-			}
-		}
-	}
+	while(1);
 }
